@@ -23,4 +23,18 @@ public class StringManipulator {
         return string.chars().count();
     }
 
+    public void removeAs() {
+        string = string.replace("a", "");
+    }
+
+    public void encrypt() {
+        string = string.chars().map((c) -> c + 1).collect(StringBuilder::new,
+                StringBuilder::appendCodePoint, StringBuilder::append).toString();
+    }
+
+    public void decrypt() {
+        string = string.chars().map((c) -> c - 1).collect(StringBuilder::new,
+                StringBuilder::appendCodePoint, StringBuilder::append).toString();
+    }
+
 }
